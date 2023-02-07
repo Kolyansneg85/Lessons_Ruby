@@ -11,7 +11,7 @@ class Route
       end
 
       def del_station(station)
-        self.stations.delete(station)
+        self.stations.delete(station) unless [@stations.first, @stations.last].include?(station)
         puts "Вы успешно удалили станцию #{station}"
       end      
 end
